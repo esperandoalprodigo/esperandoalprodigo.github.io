@@ -1,0 +1,166 @@
+media:
+  input: assets/img
+  output: /assets/img
+content:
+  - name: entradas
+    label: Entradas
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, tipo, date]
+      primary: title
+      sort: date
+      order: desc
+    fields:
+      - {name: title, label: Título, type: string, required: true}
+      - {name: date, label: "Fecha (si pones un día futuro, la entrada saldrá sola ese día por la mañana)", type: date}
+      - name: tipo
+        label: Tipo de entrada
+        type: select
+        required: true
+        options:
+          values:
+            - {name: pensamiento, label: Pensamiento}
+            - {name: reflexion, label: Reflexión}
+            - {name: meditacion, label: Meditación}
+            - {name: palabra, label: Palabra}
+            - {name: testimonio, label: Testimonio}
+      - name: plantilla
+        label: Plantilla (ver el catálogo)
+        type: select
+        default: auto
+        options:
+          values:
+            - {name: auto, label: "Automática (la primera de su tipo)"}
+            - {name: P1, label: "P1 · Pensamiento: tarjeta de color"}
+            - {name: P2, label: "P2 · Pensamiento: cita sobre foto"}
+            - {name: P3, label: "P3 · Pensamiento: minimal"}
+            - {name: P4, label: "P4 · Pensamiento: marco"}
+            - {name: R1, label: "R1 · Reflexión: artículo clásico"}
+            - {name: R2, label: "R2 · Reflexión: foto a todo ancho"}
+            - {name: R3, label: "R3 · Reflexión: dos columnas"}
+            - {name: M1, label: "M1 · Meditación: versículo protagonista"}
+            - {name: M2, label: "M2 · Meditación: paso a paso"}
+            - {name: W1, label: "W1 · Palabra: pasaje destacado"}
+            - {name: W2, label: "W2 · Palabra: estudio por puntos"}
+            - {name: T1, label: "T1 · Testimonio: relato"}
+            - {name: T2, label: "T2 · Testimonio: carta"}
+            - {name: T3, label: "T3 · Testimonio: antes y después"}
+      - {name: imagen, label: "Foto de portada (opcional, horizontal; al publicar se reduce sola)", type: image}
+      - {name: imagen_alt, label: "Descripción breve de la foto (para personas ciegas)", type: string}
+      - {name: resumen, label: "Resumen (1 o 2 frases para las tarjetas)", type: text}
+      - {name: versiculo, label: "Versículo (copiado literal de la RVR1960)", type: text}
+      - {name: cita, label: "Cita del versículo (ej. Lucas 15:20)", type: string}
+      - {name: body, label: Texto, type: rich-text}
+      - {name: oracion, label: "Oración final (opcional)", type: text}
+      - {name: pregunta, label: "Pregunta para pensar (opcional)", type: text}
+      - {name: destacado, label: "Testimonio: frase destacada", type: string}
+      - {name: firma, label: "Testimonio: firma (sin nombres de los hijos)", type: string}
+      - {name: saludo, label: "Testimonio T2: saludo de la carta", type: string}
+      - {name: antes, label: "Testimonio T3: lo que sentía", type: text}
+      - {name: despues, label: "Testimonio T3: lo que Dios hizo", type: text}
+      - name: puntos
+        label: "Palabra W2: puntos del estudio"
+        type: object
+        list: true
+        fields:
+          - {name: titulo, label: Título, type: string}
+          - {name: texto, label: Texto, type: text}
+          - {name: cita, label: Cita, type: string}
+      - name: bloques
+        label: "Bloques: escribe [[1]] en una línea del texto donde quieras el bloque 1, [[2]] para el 2... Los que no coloques van al final"
+        type: object
+        list: true
+        fields:
+          - name: tipo
+            label: Tipo de bloque
+            type: select
+            options:
+              values:
+                - {name: cita, label: "B1 · Cita destacada"}
+                - {name: versiculo, label: "B2 · Versículo"}
+                - {name: foto, label: "B3 · Foto con pie"}
+                - {name: galeria, label: "B4 · Galería"}
+                - {name: separador, label: "B5 · Separador"}
+                - {name: oracion, label: "B6 · Oración"}
+                - {name: pregunta, label: "B7 · Pregunta para pensar"}
+          - {name: texto, label: "Texto (cita, versículo, pie de foto, oración o pregunta)", type: text}
+          - {name: cita, label: "Cita bíblica (solo para el versículo, ej. Juan 3:16)", type: string}
+          - {name: imagen, label: "Foto (solo para foto con pie)", type: image}
+          - {name: imagenes, label: "Fotos (solo para galería)", type: image, list: true}
+      - {name: ejemplo, label: "Es una entrada de ejemplo", type: boolean, default: false}
+
+  - name: catecismo
+    label: Catecismo
+    type: collection
+    path: _catecismo
+    filename: "{primary}.md"
+    view:
+      fields: [title, numero, date]
+      primary: title
+      sort: numero
+      order: asc
+    fields:
+      - {name: title, label: "Título (ej. Pregunta 2)", type: string, required: true}
+      - {name: date, label: "Fecha de publicación (puede ser futura: saldrá ese día)", type: date}
+      - {name: numero, label: "Número de pregunta (1 a 82). La pregunta y la respuesta se ponen solas.", type: number, required: true}
+      - name: plantilla
+        label: Plantilla
+        type: select
+        default: C1
+        options:
+          values:
+            - {name: C1, label: "C1 · Ficha de la semana"}
+            - {name: C2, label: "C2 · Versión para niños"}
+      - {name: body, label: "¿Por qué? (explicación sencilla)", type: rich-text}
+      - {name: versiculo, label: "Versículo de apoyo (literal RVR1960)", type: text}
+      - {name: cita, label: Cita del versículo, type: string}
+      - {name: familia, label: Pregunta para hablar en familia, type: text}
+      - {name: pregunta_ninos, label: "C2: pregunta dicha para niños (opcional)", type: string}
+      - {name: actividad, label: "C2: actividad (opcional)", type: text}
+      - {name: imagen, label: "Foto o dibujo (opcional)", type: image}
+      - {name: ejemplo, label: "Es una entrada de ejemplo", type: boolean, default: false}
+
+  - name: sobre-mi
+    label: Sobre mí
+    type: file
+    path: sobre-mi.md
+    fields:
+      - {name: title, label: Título, type: string}
+      - {name: resumen, label: "Resumen para la portada", type: text}
+      - {name: body, label: Texto, type: rich-text}
+      - {name: layout, label: Diseño (no cambiar), type: string, hidden: true, default: pagina}
+      - {name: permalink, label: Dirección (no cambiar), type: string, hidden: true, default: /sobre-mi/}
+      - {name: ejemplo, label: "Texto provisional", type: boolean}
+
+  - name: ajustes
+    label: Ajustes de la web
+    type: file
+    path: _data/ajustes.yml
+    format: yaml
+    fields:
+      - name: contraste
+        label: Colores
+        type: select
+        options:
+          values:
+            - {name: actual, label: "Actual (crema y rosa claros)"}
+            - {name: nitido, label: "Más nítido (recomendado)"}
+            - {name: oscuros, label: "Bloques oscuros"}
+      - {name: lema, label: Lema de la portada, type: string}
+      - {name: lema_cita, label: Cita del lema, type: string}
+      - {name: entradas_portada, label: Entradas en la portada, type: number}
+      - {name: mostrar_catecismo, label: Mostrar el catecismo en la portada, type: boolean}
+      - {name: mostrar_sobre_mi, label: Mostrar «Sobre mí» en la portada, type: boolean}
+      - {name: mostrar_instagram, label: Mostrar Instagram en la portada, type: boolean}
+      - {name: instagram, label: Enlace de Instagram, type: string}
+      - {name: correo, label: Correo de contacto, type: string}
+      - {name: titular, label: "Nombre y apellidos de la titular (aviso legal)", type: string}
+      - name: menu
+        label: Menú (se puede reordenar, renombrar y añadir)
+        type: object
+        list: true
+        fields:
+          - {name: texto, label: Texto, type: string}
+          - {name: enlace, label: "Enlace (ej. /catecismo/)", type: string}
