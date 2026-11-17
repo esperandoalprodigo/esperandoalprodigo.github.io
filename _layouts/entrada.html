@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{% assign tipo = site.data.tipos[page.tipo] %}
+{% assign p = page.plantilla %}
+{% if p == nil or p == "" or p == "auto" %}{% assign p = tipo.defecto | default: "R1" %}{% endif %}
+{% assign archivo = "plantillas/" | append: p | append: ".html" %}
+{% if page.ejemplo %}<p class="aviso-ejemplo estrecho">Entrada de ejemplo. Bórrala desde el panel cuando publiques las tuyas.</p>{% endif %}
+<article class="entrada plantilla-{{ p }}">
+{% include {{ archivo }} %}
+</article>
+<p class="estrecho volver"><a href="{{ tipo.url | default: '/entradas/' | relative_url }}">Ver más {{ tipo.plural | default: 'entradas' | downcase }}</a></p>

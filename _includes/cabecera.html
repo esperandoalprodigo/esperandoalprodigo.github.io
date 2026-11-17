@@ -1,0 +1,12 @@
+<header class="cabecera">
+  <div class="envoltura cabecera-fila">
+    <a class="marca" href="{{ '/' | relative_url }}" aria-label="Esperando al Pródigo, inicio">{% include logo.html %}</a>
+    <details class="menu-movil">
+      <summary aria-label="Abrir menú"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></summary>
+      <nav aria-label="Menú principal"><ul>{% for m in site.data.ajustes.menu %}<li><a href="{{ m.enlace | relative_url }}">{{ m.texto }}</a></li>{% endfor %}</ul></nav>
+    </details>
+    <nav class="menu" aria-label="Menú principal">
+      <ul>{% for m in site.data.ajustes.menu %}<li><a href="{{ m.enlace | relative_url }}"{% if page.url == m.enlace %} aria-current="page"{% endif %}>{{ m.texto }}</a></li>{% endfor %}</ul>
+    </nav>
+  </div>
+</header>

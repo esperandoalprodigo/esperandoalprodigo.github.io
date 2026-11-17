@@ -1,0 +1,11 @@
+<header class="estrecho cab-pagina">
+  {% include partes/meta.html %}
+  <h1>{{ page.title }}</h1>
+  {% if page.resumen %}<p class="entradilla">{{ page.resumen }}</p>{% endif %}
+  {% unless page.imagen %}<span class="raya-izq"></span>{% endunless %}
+</header>
+<div class="estrecho">
+  {% if page.imagen %}<img class="img-entrada" src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | default: "" | escape }}">{% endif %}
+  {% include partes/versiculo.html %}
+  {% include partes/cuerpo.html %}
+</div>

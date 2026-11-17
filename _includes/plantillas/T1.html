@@ -1,0 +1,10 @@
+<div class="estrecho">
+  {% if page.imagen %}<img class="img-entrada" src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | default: "" | escape }}">{% endif %}
+  <header class="cab-pagina">
+    {% include partes/meta.html %}
+    <h1>{{ page.title }}</h1>
+    {% if page.destacado %}<p class="t-destacado">«{{ page.destacado }}»</p>{% endif %}
+    {% if page.firma %}<p class="t-firma">{% unless page.imagen %}<span class="inicial" aria-hidden="true">{{ page.firma | slice: 0 }}</span>{% endunless %}{{ page.firma }}</p>{% endif %}
+  </header>
+  {% include partes/cuerpo.html %}
+</div>

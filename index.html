@@ -1,0 +1,57 @@
+---
+layout: default
+title: Inicio
+---
+{% assign aj = site.data.ajustes %}
+<section class="portada">
+  <div class="envoltura">
+    {% include simbolo.html %}
+    <h1>esperando al pródigo</h1>
+    <p class="lema">{{ aj.lema }}</p>
+    <p class="etiqueta">{{ aj.lema_cita }}</p>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="bloque-portada">
+  <div class="envoltura">
+    <h2>Lo último</h2>
+    <div class="rejilla">
+      {% for e in site.posts limit: aj.entradas_portada %}{% include tarjeta.html e=e %}{% endfor %}
+    </div>
+    <p style="margin-top:28px"><a class="boton" href="{{ '/entradas/' | relative_url }}">Ver todas las entradas</a></p>
+  </div>
+</section>
+{% endif %}
+
+{% assign semanas = site.catecismo | sort: "numero" %}
+{% if aj.mostrar_catecismo and semanas.size > 0 %}
+{% assign ult = semanas | last %}{% assign q = site.data.spurgeon | where: "numero", ult.numero | first %}
+<section class="bloque-portada">
+  <div class="envoltura dos">
+    <div class="caja-rosa caja-oscura">
+      <p class="etiqueta">Catecismo de la semana · pregunta {{ ult.numero }}</p>
+      <h2 style="font-size:30px;margin:12px 0 16px">{{ q.pregunta }}</h2>
+      <p>{{ q.respuesta }}</p>
+      <p style="margin:0"><a href="{{ ult.url | relative_url }}">Leer el porqué</a></p>
+    </div>
+    {% if aj.mostrar_sobre_mi %}{% assign sm = site.pages | where: "url", "/sobre-mi/" | first %}
+    <div class="caja-rosa" style="background:var(--tarjeta);border:1px solid var(--borde)">
+      <p class="etiqueta">Sobre mí</p>
+      <h2 style="font-size:30px;margin:12px 0 16px">{{ sm.title }}</h2>
+      <p>{{ sm.resumen }}</p>
+      <p style="margin:0"><a href="{{ '/sobre-mi/' | relative_url }}">Conóceme</a></p>
+    </div>{% endif %}
+  </div>
+</section>
+{% endif %}
+
+{% if aj.mostrar_instagram and aj.instagram %}
+<section class="bloque-portada">
+  <div class="envoltura caja-rosa" style="text-align:center">
+    <p class="etiqueta">Instagram</p>
+    <h2 style="font-size:30px;margin:12px 0 20px">Cada semana, también en Instagram</h2>
+    <a class="boton" href="{{ aj.instagram }}" rel="noopener">Seguir a @esperandoalprodigo</a>
+  </div>
+</section>
+{% endif %}

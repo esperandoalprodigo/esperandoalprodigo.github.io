@@ -1,0 +1,12 @@
+{% assign e = include.e %}
+<a class="tarjeta" href="{{ e.url | relative_url }}">
+  {% if e.imagen %}<img class="tarjeta-img" src="{{ e.imagen | relative_url }}" alt="" loading="lazy">
+  {% elsif e.tipo == "pensamiento" %}<div class="tarjeta-sin"><p>{{ e.content | strip_html | truncatewords: 22 }}</p></div>
+  {% elsif e.versiculo %}<div class="tarjeta-sin"><p>{{ e.versiculo | truncatewords: 20 }}</p></div>
+  {% else %}<div class="tarjeta-sin">{% include simbolo.html %}</div>{% endif %}
+  <div class="tarjeta-txt">
+    <p class="etiqueta">{{ site.data.tipos[e.tipo].nombre }}{% if e.numero %}Catecismo · pregunta {{ e.numero }}{% endif %}</p>
+    <h3>{{ e.title }}</h3>
+    {% if e.resumen %}<p>{{ e.resumen }}</p>{% endif %}
+  </div>
+</a>

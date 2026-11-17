@@ -1,0 +1,11 @@
+---
+layout: default
+---
+{% assign n = page.numero | plus: 0 %}
+{% assign q = site.data.spurgeon | where: "numero", n | first %}
+{% assign archivo = "plantillas/" | append: page.plantilla | append: ".html" %}
+{% if page.ejemplo %}<p class="aviso-ejemplo estrecho">Entrada de ejemplo. Bórrala desde el panel cuando publiques las tuyas.</p>{% endif %}
+<article class="entrada plantilla-{{ page.plantilla }}">
+{% include {{ archivo }} q=q n=n %}
+</article>
+<p class="estrecho volver"><a href="{{ '/catecismo/' | relative_url }}">Todas las preguntas</a></p>

@@ -1,0 +1,2 @@
+{% assign palabras = content | strip_html | number_of_words %}{% assign minutos = palabras | divided_by: 200 | plus: 1 %}
+<p class="etiqueta">{{ site.data.tipos[page.tipo].nombre }}{% if palabras > 120 %} · {{ minutos }} min de lectura{% endif %}</p>

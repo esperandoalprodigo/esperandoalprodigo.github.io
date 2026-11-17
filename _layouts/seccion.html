@@ -1,0 +1,11 @@
+---
+layout: default
+---
+{% assign t = site.data.tipos[page.tipo] %}
+<header class="envoltura cab-pagina"><p class="etiqueta">Sección</p><h1>{{ page.title }}</h1>{% if page.resumen %}<p class="entradilla">{{ page.resumen }}</p>{% endif %}</header>
+{% if page.tipo %}{% assign lista = site.posts | where: "tipo", page.tipo %}{% else %}{% assign lista = site.posts %}{% endif %}
+<div class="envoltura">
+  {% if page.tipo == nil %}<nav class="filtros" aria-label="Secciones">{% for x in site.data.tipos %}<a href="{{ x[1].url | relative_url }}">{{ x[1].plural }}</a>{% endfor %}<a href="{{ '/catecismo/' | relative_url }}">Catecismo</a></nav>{% endif %}
+  {% if lista.size > 0 %}<div class="rejilla">{% for e in lista %}{% include tarjeta.html e=e %}{% endfor %}</div>
+  {% else %}<p>Todavía no hay entradas en esta sección.</p>{% endif %}
+</div>

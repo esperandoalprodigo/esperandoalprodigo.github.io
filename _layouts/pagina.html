@@ -1,0 +1,8 @@
+---
+layout: default
+---
+{% if page.ejemplo %}<p class="aviso-ejemplo estrecho">Texto provisional. Sustitúyelo desde el panel.</p>{% endif %}
+<article class="estrecho">
+  <header class="cab-pagina"><h1>{{ page.title }}</h1>{% if page.actualizado %}<p class="meta">Última actualización: {{ page.actualizado }}</p>{% endif %}</header>
+  <div class="prosa">{{ content }}</div>
+</article>

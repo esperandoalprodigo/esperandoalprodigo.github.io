@@ -1,0 +1,6 @@
+{% assign enlace = page.url | absolute_url %}{% capture mensaje %}{{ page.title }} {{ enlace }}{% endcapture %}
+<div class="compartir">
+  <p class="compartir-t">Compartir</p>
+  <a class="boton boton-claro" href="https://wa.me/?text={{ mensaje | url_encode }}" target="_blank" rel="noopener">WhatsApp</a>
+  <button class="boton boton-claro" type="button" data-enlace="{{ enlace }}" onclick="navigator.clipboard.writeText(this.dataset.enlace).then(()=>{this.textContent='Enlace copiado'})">Copiar enlace</button>
+</div>

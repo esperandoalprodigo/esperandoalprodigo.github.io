@@ -1,0 +1,11 @@
+<div class="estrecho">
+  <header class="cab-pagina">{% include partes/meta.html %}<h1>{{ page.title }}</h1></header>
+  {% if page.imagen %}<img class="img-entrada" src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | default: "" | escape }}">{% endif %}
+  <ol class="pasos">
+    <li><span class="num" aria-hidden="true">1</span><div><h2>Leer</h2>{% if page.versiculo %}<p class="cursiva">«{{ page.versiculo }}» <span class="ref">{{ page.cita }} · RVR1960</span></p>{% endif %}</div></li>
+    <li><span class="num" aria-hidden="true">2</span><div><h2>Pensar</h2><div class="prosa">{% include partes/texto.html %}</div></div></li>
+    {% if page.oracion %}<li><span class="num" aria-hidden="true">3</span><div><h2>Orar</h2><p>{{ page.oracion }}</p></div></li>{% endif %}
+    <li><span class="num" aria-hidden="true">{% if page.oracion %}4{% else %}3{% endif %}</span><div><h2>Escribir</h2>{% if page.pregunta %}<p>{{ page.pregunta }}</p>{% endif %}<p class="lineas" aria-hidden="true"><span></span><span></span><span></span></p></div></li>
+  </ol>
+  {% include bloques.html %}
+</div>

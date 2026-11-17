@@ -1,0 +1,5 @@
+pensamiento: {nombre: Pensamiento, plural: Pensamientos, url: /pensamientos/, defecto: P1}
+reflexion:   {nombre: Reflexión,   plural: Reflexiones,  url: /reflexiones/,  defecto: R1}
+meditacion:  {nombre: Meditación,  plural: Meditaciones, url: /meditaciones/, defecto: M1}
+palabra:     {nombre: Palabra,     plural: Palabra,      url: /palabra/,      defecto: W1}
+testimonio:  {nombre: Testimonio,  plural: Testimonios,  url: /testimonios/,  defecto: T1}

@@ -1,0 +1,7 @@
+{% assign palabras = content | strip_html | number_of_words %}
+{% if palabras > 400 and content contains "<h2" %}
+{% assign trozos = content | split: "<h2" %}
+<nav class="indice" aria-label="En esta entrada"><p>En esta entrada</p><ol>
+{% for t in trozos offset: 1 %}{% assign id = t | split: 'id="' | last | split: '"' | first %}{% assign texto = t | split: "</h2>" | first | split: ">" | last %}<li><a href="#{{ id }}">{{ texto }}</a></li>{% endfor %}
+</ol></nav>
+{% endif %}

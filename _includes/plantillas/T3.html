@@ -1,0 +1,11 @@
+<div class="estrecho">
+  <header class="cab-pagina">{% include partes/meta.html %}<h1>{{ page.title }}</h1></header>
+  {% if page.imagen %}<img class="img-entrada" src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | default: "" | escape }}">{% endif %}
+  {% if page.antes or page.despues %}<div class="antes-despues">
+    <div><p class="etiqueta">Lo que sentía</p><p>{{ page.antes }}</p></div>
+    <div class="despues"><p class="etiqueta">Lo que Dios hizo</p><p>{{ page.despues }}</p></div>
+  </div>{% endif %}
+  {% include partes/versiculo.html %}
+  {% include partes/cuerpo.html %}
+  {% if page.firma %}<p class="t-firma">{{ page.firma }}</p>{% endif %}
+</div>

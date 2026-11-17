@@ -1,0 +1,5 @@
+{% assign texto_final = content %}{% assign bloques_usados = "," %}
+{% for b in page.bloques %}{% capture marca %}[[{{ forloop.index }}]]{% endcapture %}
+{% if texto_final contains marca %}{% capture html_b %}{% include bloque.html b=b %}{% endcapture %}{% capture p_marca %}<p>{{ marca }}</p>{% endcapture %}
+{% assign texto_final = texto_final | replace: p_marca, html_b | replace: marca, html_b %}{% assign bloques_usados = bloques_usados | append: forloop.index | append: "," %}{% endif %}
+{% endfor %}{{ texto_final }}

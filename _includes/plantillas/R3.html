@@ -1,0 +1,14 @@
+<div class="envoltura r3">
+  <aside class="r3-lado">
+    {% if page.imagen %}<img src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | default: "" | escape }}">
+    {% elsif page.versiculo %}<div class="r3-panel"><p class="h">{{ page.versiculo }}</p><p class="ref">{{ page.cita }} · RVR1960</p></div>
+    {% else %}<div class="r3-panel r3-vacio">{% include simbolo.html %}</div>{% endif %}
+  </aside>
+  <div class="r3-texto">
+    {% include partes/meta.html %}
+    <h1>{{ page.title }}</h1>
+    {% if page.resumen %}<p class="entradilla">{{ page.resumen }}</p>{% endif %}
+    {% if page.imagen %}{% include partes/versiculo.html %}{% endif %}
+    {% include partes/cuerpo.html %}
+  </div>
+</div>

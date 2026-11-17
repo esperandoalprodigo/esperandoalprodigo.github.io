@@ -1,0 +1,10 @@
+<div class="estrecho">
+  {% if page.imagen %}<img class="img-entrada m1-img" src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | default: "" | escape }}">{% endif %}
+  <header class="m1-versiculo">
+    <p class="etiqueta">Meditación</p>
+    <h1 class="visualmente-oculto">{{ page.title }}</h1>
+    {% if page.versiculo %}<p class="h m1-texto">{{ page.versiculo }}</p><p class="ref">{{ page.cita }} · RVR1960</p>
+    {% else %}<p class="h m1-texto">{{ page.title }}</p>{% endif %}
+  </header>
+  {% include partes/cuerpo.html %}
+</div>

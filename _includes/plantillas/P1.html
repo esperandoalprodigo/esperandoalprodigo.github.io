@@ -1,0 +1,11 @@
+{% assign largo = content | strip_html | strip | size %}{% if largo > 110 %}{% assign tam = "frase-larga" %}{% else %}{% assign tam = "frase-corta" %}{% endif %}
+<section class="estrecho pens p1">
+  {% if page.imagen %}<img class="pens-img" src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | default: "" | escape }}">{% endif %}
+  <div class="pens-caja">
+    <p class="etiqueta">Pensamiento</p>
+    <h1 class="visualmente-oculto">{{ page.title }}</h1>
+    <div class="frase {{ tam }}">{% include partes/texto.html %}</div>
+    {% if page.cita %}<p class="ref">{{ page.cita }}</p>{% endif %}
+  </div>
+  {% include bloques.html %}
+</section>

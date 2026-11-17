@@ -1,0 +1,47 @@
+# Construye y publica la web. Se ejecuta al guardar desde el panel y cada día a primera hora,
+# para que las entradas con fecha futura salgan solas ese día. Además reduce el peso de las fotos.
+name: Publicar la web
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Construir la web
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+          TZ: Europe/Madrid
+      - name: Reducir el peso de las fotos
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick
+          if [ -d _site/assets/img ]; then
+            find _site/assets/img -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' -o -iname '*.webp' \) \
+              -size +300k -exec mogrify -auto-orient -resize '1600x1600>' -strip -quality 82 {} +
+          fi
+      - uses: actions/upload-pages-artifact@v3
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4

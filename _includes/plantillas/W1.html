@@ -1,0 +1,9 @@
+<header class="w1-banda"><div class="estrecho w1-fila{% if page.imagen %} con-foto{% endif %}">
+  {% if page.imagen %}<img src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | default: "" | escape }}">{% endif %}
+  <div>
+    <p class="etiqueta">Palabra{% if page.cita %} · {{ page.cita }} · RVR1960{% endif %}</p>
+    <h1 class="visualmente-oculto">{{ page.title }}</h1>
+    {% if page.versiculo %}<p class="h w1-texto">{{ page.versiculo }}</p>{% else %}<p class="h w1-texto">{{ page.title }}</p>{% endif %}
+  </div>
+</div></header>
+<div class="estrecho">{% include partes/cuerpo.html %}</div>

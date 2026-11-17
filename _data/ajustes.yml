@@ -1,0 +1,22 @@
+# Se editan desde el panel: «Ajustes de la web»
+contraste: nitido          # actual | nitido | oscuros
+lema: Un lugar para las madres que esperan el regreso de sus hijos.
+lema_cita: Lucas 15:20
+entradas_portada: 6
+mostrar_catecismo: true
+mostrar_sobre_mi: true
+mostrar_instagram: true
+instagram: https://www.instagram.com/esperandoalprodigo/
+correo: esperandoalprodigo@gmail.com   # al conectar el dominio: contacto@esperandoalprodigo.es
+titular: "[NOMBRE Y APELLIDOS DE GEOCONDA]"
+menu:
+  - texto: Inicio
+    enlace: /
+  - texto: Entradas
+    enlace: /entradas/
+  - texto: Catecismo
+    enlace: /catecismo/
+  - texto: Sobre mí
+    enlace: /sobre-mi/
+  - texto: Contacto
+    enlace: /contacto/

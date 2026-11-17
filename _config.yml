@@ -1,0 +1,28 @@
+title: Esperando al Pródigo
+description: Un lugar para las madres que esperan el regreso de sus hijos.
+lang: es_ES
+# Mientras no haya dominio propio. Al conectar el dominio: url: "https://esperandoalprodigo.es"
+url: "https://esperandoalprodigo.github.io"
+baseurl: ""
+timezone: Europe/Madrid
+permalink: /entradas/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+collections:
+  catecismo:
+    output: true
+    permalink: /catecismo/:name/
+defaults:
+  - scope: {path: "", type: posts}
+    values: {layout: entrada, plantilla: auto}
+  - scope: {path: "", type: catecismo}
+    values: {layout: catecismo, plantilla: C1}
+author: Geoconda
+future: false
+exclude: [LEEME.md, README.md, Gemfile, Gemfile.lock, vendor, .pages.yml]

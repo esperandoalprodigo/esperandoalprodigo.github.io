@@ -1,0 +1,18 @@
+---
+layout: default
+title: Catecismo
+permalink: /catecismo/
+---
+<header class="estrecho cab-pagina"><p class="etiqueta">Una pregunta por semana</p><h1>Catecismo</h1>
+<p class="entradilla">El Catecismo de Spurgeon, pregunta a pregunta, con una explicación sencilla y una pregunta para hablar en familia.</p></header>
+<div class="estrecho">
+{% assign semanas = site.catecismo | sort: "numero" %}
+{% if semanas.size > 0 %}
+<ol class="lista-cat">
+{% for s in semanas %}{% assign q = site.data.spurgeon | where: "numero", s.numero | first %}
+<li><a href="{{ s.url | relative_url }}"><span class="c-num" aria-hidden="true">{{ s.numero }}</span><span>{{ q.pregunta }}</span></a></li>
+{% endfor %}
+</ol>
+{% else %}<p>La primera pregunta llegará pronto.</p>{% endif %}
+<p class="c-credito">Catecismo de Spurgeon, edición en español © Chapel Library, Pensacola, Florida.</p>
+</div>

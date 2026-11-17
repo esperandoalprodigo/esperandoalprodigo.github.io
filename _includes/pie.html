@@ -1,0 +1,9 @@
+<footer class="pie">
+  <div class="envoltura pie-fila">
+    <a class="pie-logo" href="{{ '/' | relative_url }}" aria-label="Esperando al Pródigo, inicio">{% include logo.html %}</a>
+    <nav aria-label="Información">
+      <ul>{% if site.data.ajustes.instagram %}<li><a href="{{ site.data.ajustes.instagram }}" rel="noopener">Instagram</a></li>{% endif %}<li><a href="{{ '/contacto/' | relative_url }}">Contacto</a></li><li><a href="{{ '/aviso-legal/' | relative_url }}">Aviso legal</a></li><li><a href="{{ '/privacidad/' | relative_url }}">Privacidad</a></li><li><a href="{{ '/cookies/' | relative_url }}">Cookies</a></li></ul>
+    </nav>
+    <p class="pie-copy">© {{ 'now' | date: '%Y' }} Esperando al Pródigo</p>
+  </div>
+</footer>

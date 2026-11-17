@@ -1,0 +1,9 @@
+{% if page.imagen %}
+<header class="r2-portada" style="background-image:url('{{ page.imagen | relative_url }}')"><div class="velo"><div class="estrecho">{% include partes/meta.html %}<h1>{{ page.title }}</h1>{% if page.resumen %}<p class="entradilla">{{ page.resumen }}</p>{% endif %}</div></div></header>
+{% else %}
+<header class="r2-banda"><div class="estrecho">{% include partes/meta.html %}<h1>{{ page.title }}</h1>{% if page.resumen %}<p class="entradilla">{{ page.resumen }}</p>{% endif %}</div></header>
+{% endif %}
+<div class="estrecho r2-cuerpo">
+  {% include partes/versiculo.html %}
+  {% include partes/cuerpo.html %}
+</div>

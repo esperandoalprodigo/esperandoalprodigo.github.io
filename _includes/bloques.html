@@ -1,0 +1,6 @@
+{% for b in page.bloques %}{% capture clave %},{{ forloop.index }},{% endcapture %}
+{% unless bloques_usados contains clave %}{% include bloque.html b=b %}{% endunless %}
+{% endfor %}
+{% if page.oracion and page.plantilla != "M2" %}<div class="b-oracion"><p class="h">Oremos</p><p>{{ page.oracion }}</p></div>{% endif %}
+{% if page.pregunta and page.plantilla != "M2" %}<div class="b-pregunta"><span class="q" aria-hidden="true">?</span><p>{{ page.pregunta }}</p></div>{% endif %}
+{% include compartir.html %}

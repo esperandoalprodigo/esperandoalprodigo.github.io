@@ -1,0 +1,10 @@
+{% assign b = include.b %}
+{% case b.tipo %}
+{% when "cita" %}<p class="b-cita">{{ b.texto }}</p>
+{% when "versiculo" %}<blockquote class="versiculo"><p>{{ b.texto }}</p><span class="ref">{{ b.cita }} · RVR1960</span></blockquote>
+{% when "foto" %}{% if b.imagen %}<figure class="b-foto"><img src="{{ b.imagen | relative_url }}" alt="{{ b.texto | default: '' | escape }}" loading="lazy">{% if b.texto %}<figcaption>{{ b.texto }}</figcaption>{% endif %}</figure>{% endif %}
+{% when "galeria" %}{% assign n = b.imagenes | size %}{% if n > 0 %}<div class="b-galeria{% if n < 3 %} n{{ n }}{% endif %}">{% for i in b.imagenes %}<img src="{{ i | relative_url }}" alt="" loading="lazy">{% endfor %}</div>{% endif %}
+{% when "separador" %}<div class="b-sep" role="separator">{% include llama.html %}</div>
+{% when "oracion" %}<div class="b-oracion"><p class="h">Oremos</p><p>{{ b.texto }}</p></div>
+{% when "pregunta" %}<div class="b-pregunta"><span class="q" aria-hidden="true">?</span><p>{{ b.texto }}</p></div>
+{% endcase %}

@@ -1,0 +1,11 @@
+<div class="estrecho">
+  <div class="carta">
+    {% if page.imagen %}<figure class="polaroid"><img src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | default: "" | escape }}"></figure>{% endif %}
+    <p class="etiqueta">Testimonio</p>
+    <h1 class="visualmente-oculto">{{ page.title }}</h1>
+    <p class="h carta-saludo">{{ page.saludo | default: "Querida madre que esperas:" }}</p>
+    <div class="prosa cursiva">{% include partes/texto.html %}</div>
+    {% if page.firma %}<p class="h carta-firma">{{ page.firma }}</p>{% endif %}
+  </div>
+  {% include bloques.html %}
+</div>

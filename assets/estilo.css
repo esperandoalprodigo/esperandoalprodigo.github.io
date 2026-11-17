@@ -1,0 +1,224 @@
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/JosefinSans-300-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:300;font-display:swap;src:url('fonts/JosefinSans-300-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/JosefinSans-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/JosefinSans-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/JosefinSans-600-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/JosefinSans-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Lato';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/Lato-400i-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Lato';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/Lato-400i-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Lato';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/Lato-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Lato';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/Lato-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Lato';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/Lato-700-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Lato';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/Lato-700-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
+/* Contraste: se elige en Ajustes de la web */
+:root,.tema-actual{--crema:#FBF7F4;--fondo:#FBF7F4;--tarjeta:#FFFFFF;--rosa:#F3DAD4;--arena:#E2C9B6;--terra:#A15A48;--terra-osc:#86473A;--tinta:#3A2E2B;--suave:#6B5A55;--borde:#E2C9B6;--oscuro:#3A2E2B;--sobre-oscuro:#FBF7F4}
+.tema-nitido{--fondo:#FFFFFF;--tarjeta:#FFFFFF;--rosa:#F6DED8;--terra:#8E4A3A;--terra-osc:#733A2D;--tinta:#2A211F;--suave:#5A4A45;--borde:#D9BFAE}
+.tema-oscuros{--fondo:#FFFFFF;--tarjeta:#FFFFFF;--rosa:#F6DED8;--terra:#8E4A3A;--terra-osc:#733A2D;--tinta:#2A211F;--suave:#5A4A45;--borde:#D9BFAE}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fondo);color:var(--tinta);font-family:'Lato',system-ui,sans-serif;font-size:18px;line-height:1.7}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--terra)}a:hover{color:var(--terra-osc)}
+h1,h2,h3,.h{font-family:'Josefin Sans',system-ui,sans-serif;font-weight:400;line-height:1.25;margin:0}
+p{margin:0 0 1em}
+.envoltura{width:min(1120px,100% - 32px);margin-inline:auto}
+.estrecho{width:min(720px,100% - 32px);margin-inline:auto}
+.saltar{position:absolute;left:-9999px}.saltar:focus{left:16px;top:8px;background:var(--tarjeta);padding:8px 12px;z-index:10}
+.etiqueta{font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--terra);margin:0}
+.ref{font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+.sym{width:44px;height:58px;color:var(--terra)}
+.llama{width:14px;height:20px;color:var(--terra)}
+
+/* Cabecera */
+.cabecera{border-bottom:1px solid var(--borde);background:var(--fondo)}
+.cabecera-fila{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}
+.marca{color:var(--tinta);display:block;width:320px}
+.logo-svg{width:100%;height:auto;display:block}
+.menu ul{list-style:none;display:flex;gap:28px;margin:0;padding:0}
+.menu a{color:var(--tinta);text-decoration:none;font-family:'Josefin Sans',sans-serif;font-size:17px}
+.menu a:hover,.menu a[aria-current]{color:var(--terra)}
+.menu-movil{display:none}
+.menu-movil summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+.menu-movil summary::-webkit-details-marker{display:none}
+.menu-movil ul{list-style:none;margin:0;padding:8px 0;position:absolute;right:16px;left:16px;background:var(--tarjeta);border:1px solid var(--borde);border-radius:12px;z-index:5}
+.menu-movil li a{display:block;padding:12px 20px;color:var(--tinta);text-decoration:none;font-family:'Josefin Sans',sans-serif}
+@media (max-width:760px){.menu{display:none}.menu-movil{display:block}.marca{width:230px}}
+
+/* Pie */
+.pie{margin-top:96px;background:var(--rosa);padding:28px 0;font-size:15px}
+.tema-oscuros .pie{background:var(--oscuro);color:var(--sobre-oscuro)}
+.tema-oscuros .pie a{color:#F3DAD4}
+.pie-fila{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px}
+.pie-logo{display:block;width:200px;color:inherit}
+.pie ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 20px}
+.pie a{color:inherit;text-decoration:none;display:inline-block;padding:6px 0}.pie a:hover{color:var(--terra)}
+.pie-copy{margin:0;font-size:13px;opacity:.8;width:100%}
+@media (max-width:760px){.pie-fila{flex-direction:column;align-items:flex-start}}
+
+/* Portada */
+.portada{padding:72px 0 56px;text-align:center}
+.portada .sym{width:72px;height:96px;margin:0 auto 20px}
+.portada h1{font-size:clamp(40px,7vw,72px);font-weight:300;margin-bottom:16px}
+.portada .lema{font-size:clamp(19px,2.4vw,22px);max-width:640px;margin:0 auto 10px}
+.tema-oscuros .portada{background:var(--oscuro);color:var(--sobre-oscuro)}
+.tema-oscuros .portada .sym,.tema-oscuros .portada .etiqueta{color:#F3DAD4}
+.bloque-portada{padding:56px 0}
+.bloque-portada>.envoltura>h2{font-size:32px;font-weight:300;margin-bottom:24px}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.tarjeta{background:var(--tarjeta);border:1px solid var(--borde);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:var(--tinta)}
+.tarjeta:hover{border-color:var(--terra)}
+.tarjeta-img{aspect-ratio:3/2;object-fit:cover;width:100%}
+.tarjeta-sin{aspect-ratio:3/2;background:var(--rosa);display:flex;align-items:center;justify-content:center;padding:24px;text-align:center}
+.tarjeta-sin p{font-family:'Josefin Sans',sans-serif;font-size:21px;line-height:1.35;margin:0}
+.tarjeta-txt{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px}
+.tarjeta-txt h3{font-size:22px}
+.tarjeta-txt p{font-size:16px;color:var(--suave);margin:0}
+.caja-rosa{background:var(--rosa);border-radius:16px;padding:36px}
+.tema-oscuros .caja-oscura{background:var(--oscuro);color:var(--sobre-oscuro)}
+.tema-oscuros .caja-oscura .etiqueta,.tema-oscuros .caja-oscura a{color:#F3DAD4}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:760px){.dos{grid-template-columns:1fr}}
+.boton{display:inline-block;background:var(--terra);color:#fff;text-decoration:none;padding:12px 22px;border-radius:999px;font-weight:700;font-size:16px;min-height:44px}
+.boton:hover{background:var(--terra-osc);color:#fff}
+
+/* Páginas de lectura */
+.cab-pagina{padding:56px 0 24px}
+.cab-pagina h1{font-size:clamp(34px,5vw,52px);font-weight:300}
+.prosa{font-size:19px}
+.prosa h2{font-size:28px;margin:1.6em 0 .6em}
+.prosa h3{font-size:22px;margin:1.4em 0 .5em}
+.prosa blockquote{margin:1.5em 0;padding:20px 24px;background:var(--rosa);border-radius:12px;font-style:italic}
+.prosa ul,.prosa ol{padding-left:1.2em}
+.aviso-ejemplo{background:#FFF4D6;color:#5A4300;border:1px solid #E9CF84;border-radius:10px;padding:12px 16px;font-size:15px;margin:24px auto 0}
+.meta{font-size:14px;color:var(--suave)}
+.indice{border:1px solid var(--borde);border-radius:12px;padding:16px 20px;margin:0 0 28px;font-size:16px}
+.indice p{font-weight:700;margin-bottom:6px}
+.indice ol{margin:0;padding-left:1.2em}
+.volver{margin-top:48px;font-size:16px}
+
+/* Versículo y bloques */
+.versiculo{background:var(--rosa);border-radius:14px;padding:24px 28px;margin:28px 0}
+.versiculo p{font-style:italic;font-size:19px;margin:0 0 10px}
+.versiculo .ref{display:block}
+.b-cita{font-family:'Josefin Sans',sans-serif;font-size:28px;line-height:1.35;color:var(--terra);text-align:center;border-top:2px solid var(--borde);border-bottom:2px solid var(--borde);padding:24px 8px;margin:36px 0}
+.b-foto{margin:32px 0}.b-foto img{border-radius:12px;width:100%}
+.b-foto figcaption{font-size:15px;color:var(--suave);text-align:center;font-style:italic;margin-top:8px}
+.b-galeria{display:grid;gap:10px;margin:32px 0;grid-template-columns:repeat(3,minmax(0,1fr))}
+.b-galeria.n2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b-galeria.n1{grid-template-columns:1fr}
+.b-galeria img{border-radius:10px;aspect-ratio:1;object-fit:cover;width:100%}
+@media (max-width:560px){.b-galeria{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.b-sep{display:flex;align-items:center;gap:16px;margin:40px 0}.b-sep::before,.b-sep::after{content:"";flex:1;height:1px;background:var(--borde)}
+.b-oracion{background:var(--oscuro);color:var(--sobre-oscuro);border-radius:14px;padding:28px;margin:36px 0}
+.b-oracion .h{color:#F3DAD4;letter-spacing:.1em;text-transform:uppercase;font-size:15px;margin-bottom:10px}
+.b-oracion p:last-child{margin:0}
+.b-pregunta{border:1.5px dashed var(--terra);border-radius:14px;padding:22px 24px;margin:36px 0;display:flex;gap:16px;align-items:flex-start}
+.b-pregunta .q{font-family:'Josefin Sans',sans-serif;font-size:40px;line-height:1;color:var(--terra)}
+.b-pregunta p{margin:0}
+
+.visualmente-oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.entradilla{font-size:21px;color:var(--suave);margin:14px 0 0}
+.raya-izq{display:block;width:56px;height:3px;background:var(--terra);margin-top:24px}
+.img-entrada{border-radius:14px;width:100%;margin:8px 0 28px;max-height:560px;object-fit:cover}
+.cursiva{font-style:italic}
+/* Pensamiento */
+.pens{padding-top:56px}
+.frase{font-family:'Josefin Sans',sans-serif;line-height:1.3}
+.frase p{margin:0 0 .4em}
+.frase-corta{font-size:clamp(30px,5vw,44px)}.frase-larga{font-size:clamp(24px,3.6vw,32px)}
+.pens-caja{display:flex;flex-direction:column;gap:18px}
+.p1 .pens-img{border-radius:16px 16px 0 0;aspect-ratio:16/9;object-fit:cover;width:100%}
+.p1 .pens-caja{background:var(--rosa);border-radius:16px;padding:clamp(32px,6vw,64px)}
+.p1 .pens-img+.pens-caja{border-radius:0 0 16px 16px}
+.p2 .pens-caja{background:var(--oscuro);color:var(--sobre-oscuro);border-radius:16px;overflow:hidden;background-size:cover;background-position:center;min-height:420px;display:flex}
+.p2 .velo{flex:1;padding:clamp(32px,6vw,64px);display:flex;flex-direction:column;justify-content:flex-end;gap:18px}
+.p2 .con-foto .velo{background:linear-gradient(to top,rgba(42,33,31,.85),rgba(42,33,31,.35))}
+.p2 .etiqueta,.p2 .ref{color:#F3DAD4}
+.p3 .pens-caja{text-align:center;align-items:center;padding:clamp(40px,8vw,88px) 8px}
+.p3 .frase{font-family:'Lato',sans-serif;font-style:italic}
+.p3 .raya{display:block;width:56px;height:2px;background:var(--terra)}
+.pens-redonda{width:128px;height:128px;border-radius:50%;object-fit:cover}
+.p4 .marco{border:2px solid var(--arena);border-radius:14px;overflow:hidden;background:var(--tarjeta)}
+.p4 .pens-img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.p4 .pens-caja{align-items:center;text-align:center;padding:clamp(32px,6vw,64px)}
+.p4 .llama{width:20px;height:28px}
+/* Reflexión */
+.r2-portada{background-size:cover;background-position:center;color:#fff;min-height:440px;display:flex}
+.r2-portada .velo{flex:1;display:flex;align-items:flex-end;padding:48px 0;background:linear-gradient(to top,rgba(42,33,31,.85),rgba(42,33,31,.1))}
+.r2-portada h1{font-size:clamp(32px,5vw,52px);font-weight:300}
+.r2-portada .etiqueta,.r2-portada .entradilla{color:#F3DAD4}
+.r2-banda{background:var(--rosa);padding:64px 0 48px}
+.r2-banda h1{font-size:clamp(32px,5vw,52px);font-weight:300}
+.r2-cuerpo{padding-top:40px}
+.r3{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;padding-top:56px;align-items:start}
+.r3-lado{position:sticky;top:24px}
+.r3-lado img{border-radius:14px;width:100%;aspect-ratio:3/4;object-fit:cover}
+.r3-panel{background:var(--rosa);border-radius:14px;padding:36px;min-height:320px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.r3-panel .h{font-size:24px;line-height:1.4}
+.r3-vacio{align-items:center}.r3-vacio .sym{width:64px;height:86px}
+.r3 h1{font-size:clamp(30px,4vw,44px);font-weight:300;margin:6px 0 0}
+.r3-texto .prosa{margin-top:28px}
+@media (max-width:820px){.r3{grid-template-columns:1fr;gap:24px}.r3-lado{position:static}.r3-lado img{aspect-ratio:16/10}}
+/* Meditación */
+.m1-img{margin-top:40px}
+.m1-versiculo{background:var(--rosa);border-radius:16px;padding:clamp(28px,6vw,56px);margin:40px 0 32px;display:flex;flex-direction:column;gap:16px}
+.m1-texto{font-size:clamp(24px,3.6vw,32px);line-height:1.4}
+.pasos{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:28px}
+.pasos li{display:flex;gap:20px;align-items:flex-start}
+.pasos h2{font-size:24px;margin-bottom:8px}
+.num{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.lineas span{display:block;border-bottom:1px solid var(--borde);height:34px}
+/* Palabra */
+.w1-banda{background:var(--oscuro);color:var(--sobre-oscuro);padding:64px 0;margin-bottom:40px}
+.w1-banda .etiqueta{color:#F3DAD4}
+.w1-fila{display:flex;flex-direction:column;gap:20px}
+.w1-fila.con-foto{display:grid;grid-template-columns:200px minmax(0,1fr);gap:32px;align-items:center}
+.w1-fila img{border-radius:12px;aspect-ratio:3/4;object-fit:cover}
+.w1-texto{font-size:clamp(24px,3.6vw,32px);line-height:1.45;margin-top:12px}
+@media (max-width:640px){.w1-fila.con-foto{grid-template-columns:1fr}.w1-fila img{aspect-ratio:16/10}}
+.puntos{list-style:none;padding:0;margin:8px 0 32px}
+.puntos li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:20px 0;border-top:1px solid var(--borde)}
+.puntos h2{font-size:23px;margin-bottom:6px}.puntos p{margin:0}
+.num-grande{font-family:'Josefin Sans',sans-serif;font-size:46px;font-weight:300;color:var(--terra);line-height:1}
+/* Testimonio */
+.t-destacado{font-family:'Josefin Sans',sans-serif;font-size:clamp(24px,3.6vw,30px);color:var(--terra);line-height:1.35;margin:20px 0 0}
+.t-firma{display:flex;align-items:center;gap:12px;color:var(--suave);font-size:16px;margin-top:16px}
+.inicial{width:48px;height:48px;border-radius:50%;background:var(--rosa);color:var(--tinta);display:flex;align-items:center;justify-content:center;font-family:'Josefin Sans',sans-serif;font-size:22px}
+.carta{background:#FFFDF9;border:1px solid var(--borde);border-top:6px solid var(--rosa);border-radius:14px;padding:clamp(28px,6vw,56px);margin-top:56px;position:relative}
+.carta-saludo{font-size:26px;margin:12px 0 20px}
+.carta-firma{text-align:right;font-size:20px;margin-top:24px}
+.polaroid{float:right;margin:0 0 16px 20px;background:#fff;padding:10px 10px 28px;box-shadow:0 2px 8px rgba(42,33,31,.18);transform:rotate(3deg);width:180px}
+@media (max-width:560px){.polaroid{float:none;margin:0 auto 20px;width:200px}}
+.antes-despues{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:8px 0 24px}
+.antes-despues>div{background:var(--crema);border:1px solid var(--borde);border-radius:12px;padding:20px}
+.antes-despues .despues{background:var(--rosa);border-color:var(--rosa)}
+.antes-despues p:last-child{margin:6px 0 0}
+@media (max-width:560px){.antes-despues{grid-template-columns:1fr}}
+/* Catecismo */
+.c-cab{display:flex;gap:20px;align-items:center;padding:56px 0 24px}
+.c-cab h1{font-size:clamp(26px,4vw,38px);margin-top:4px}
+.c-num{flex-shrink:0;width:72px;height:72px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Josefin Sans',sans-serif;font-size:34px;font-weight:300}
+.c-num.grande{width:96px;height:96px;font-size:46px;margin:0 auto}
+.c-resp{background:var(--rosa);border-radius:14px;padding:24px 28px;font-size:19px}
+.c-sub{font-size:24px;margin:32px 0 10px}
+.c-familia{border:1.5px dashed var(--terra);border-radius:12px;padding:18px 20px;margin:28px 0;font-size:17px}
+.c-credito{font-size:14px;color:var(--suave);margin-top:24px}
+.c2{background:var(--rosa);border-radius:18px;padding:clamp(28px,6vw,56px);margin-top:56px;text-align:center;display:flex;flex-direction:column;gap:16px;align-items:center}
+.c2 h1{font-size:clamp(30px,5vw,42px)}
+.c2-img{border-radius:12px;width:100%;max-height:340px;object-fit:cover}
+.c2-resp{font-size:20px;font-weight:700;max-width:560px}
+.c2-actividad{background:var(--tarjeta);border-radius:12px;padding:16px 20px;font-size:17px}
+.c2 .c-familia{background:var(--tarjeta);margin:0}
+
+.filtros{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.filtros a{border:1px solid var(--borde);border-radius:999px;padding:8px 16px;text-decoration:none;color:var(--tinta);font-size:15px;min-height:44px;display:inline-flex;align-items:center}
+.filtros a:hover{border-color:var(--terra);color:var(--terra)}
+.lista-cat{list-style:none;padding:0;margin:0 0 24px}
+.lista-cat a{display:flex;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--borde);text-decoration:none;color:var(--tinta);font-family:'Josefin Sans',sans-serif;font-size:20px}
+.lista-cat .c-num{width:48px;height:48px;font-size:22px}
+
+.compartir{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:40px 0 0;padding-top:24px;border-top:1px solid var(--borde)}
+.compartir-t{margin:0 8px 0 0;font-family:'Josefin Sans',sans-serif;font-size:18px}
+.boton-claro{background:transparent;color:var(--terra);border:1.5px solid var(--terra);font-family:'Lato',sans-serif;cursor:pointer;line-height:1.2}
+.boton-claro:hover{background:var(--terra);color:#fff}
