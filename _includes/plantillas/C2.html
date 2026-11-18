@@ -3,7 +3,8 @@
     {% if page.imagen %}<img class="c2-img" src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | default: "" | escape }}">{% else %}<span class="c-num grande" aria-hidden="true">{{ include.n }}</span>{% endif %}
     <p class="etiqueta">La pregunta de la semana · nº {{ include.n }}</p>
     <h1>{{ page.pregunta_ninos | default: include.q.pregunta }}</h1>
-    <p class="c2-resp">{{ include.q.respuesta }}</p>
+    <p class="c2-resp">{{ include.q.respuesta | enlazar_citas }}</p>
+    {% if page.versiculos and page.versiculos.size > 0 %}<section class="c-citados">{% for v in page.versiculos %}{% if v.texto %}<blockquote class="versiculo"><p>{{ v.texto }}</p><span class="ref">{{ v.cita }} · RVR1960</span></blockquote>{% endif %}{% endfor %}</section>{% endif %}
     {% if content != "" %}<div class="prosa">{% include partes/texto.html %}</div>{% endif %}
     {% if page.actividad %}<div class="c2-actividad"><strong>Actividad.</strong> {{ page.actividad }}</div>{% endif %}
     {% if page.familia %}<div class="c-familia"><strong>Para hablar en familia.</strong> {{ page.familia }}</div>{% endif %}
