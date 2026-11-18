@@ -104,30 +104,8 @@ content:
     fields:
       - {name: title, label: "Título (ej. Pregunta 2)", type: string, required: true}
       - {name: date, label: "Fecha de publicación (puede ser futura: saldrá ese día)", type: date}
-      - {name: numero, label: "Número de pregunta (1 a 82). La pregunta y la respuesta se ponen solas.", type: number, required: true}
-      - name: plantilla
-        label: Plantilla
-        type: select
-        default: C1
-        options:
-          values:
-            - {name: C1, label: "C1 · Ficha de la semana"}
-            - {name: C2, label: "C2 · Versión para niños"}
-      - name: versiculos
-        label: "Versículos citados en la respuesta: añade uno por cada cita y pega su texto literal de la RVR1960"
-        type: object
-        list: true
-        fields:
-          - {name: cita, label: "Cita (ej. 1 Corintios 10:31)", type: string}
-          - {name: texto, label: Texto del versículo, type: text}
-      - {name: body, label: "¿Por qué? (explicación sencilla, opcional)", type: rich-text}
-      - {name: versiculo, label: "Versículo destacado aparte (opcional, literal RVR1960)", type: text}
-      - {name: cita, label: Cita del versículo destacado, type: string}
-      - {name: familia, label: Pregunta para hablar en familia, type: text}
-      - {name: pregunta_ninos, label: "C2: pregunta dicha para niños (opcional)", type: string}
-      - {name: actividad, label: "C2: actividad (opcional)", type: text}
-      - {name: imagen, label: "Foto o dibujo (opcional)", type: image}
-      - {name: ejemplo, label: "Es una entrada de ejemplo", type: boolean, default: false}
+      - {name: numero, label: "Número de pregunta (1 a 82). La pregunta, la respuesta y las citas salen solas del catecismo de Chapel Library; no se añade nada.", type: number, required: true}
+      - {name: plantilla, label: Plantilla (no cambiar), type: string, hidden: true, default: C1}
 
   - name: sobre-mi
     label: Sobre mí

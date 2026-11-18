@@ -24,7 +24,7 @@ title: Inicio
 </section>
 {% endif %}
 
-{% assign semanas = site.catecismo | sort: "numero" %}
+{% assign semanas = site.catecismo | where_exp: "d", "d.date <= site.time" | sort: "numero" %}
 {% if aj.mostrar_catecismo and semanas.size > 0 %}
 {% assign ult = semanas | last %}{% assign q = site.data.spurgeon | where: "numero", ult.numero | first %}
 <section class="bloque-portada">
@@ -32,8 +32,8 @@ title: Inicio
     <div class="caja-rosa caja-oscura">
       <p class="etiqueta">Catecismo de la semana · pregunta {{ ult.numero }}</p>
       <h2 style="font-size:30px;margin:12px 0 16px">{{ q.pregunta }}</h2>
-      <p>{{ q.respuesta }}</p>
-      <p style="margin:0"><a href="{{ ult.url | relative_url }}">Leer el porqué</a></p>
+      <p>{{ q.respuesta | enlazar_citas }}</p>
+      <p style="margin:0"><a href="{{ ult.url | relative_url }}">Ver la pregunta</a></p>
     </div>
     {% if aj.mostrar_sobre_mi %}{% assign sm = site.pages | where: "url", "/sobre-mi/" | first %}
     <div class="caja-rosa" style="background:var(--tarjeta);border:1px solid var(--borde)">
