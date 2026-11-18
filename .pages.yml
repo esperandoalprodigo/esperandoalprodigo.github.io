@@ -113,9 +113,16 @@ content:
           values:
             - {name: C1, label: "C1 · Ficha de la semana"}
             - {name: C2, label: "C2 · Versión para niños"}
-      - {name: body, label: "¿Por qué? (explicación sencilla)", type: rich-text}
-      - {name: versiculo, label: "Versículo de apoyo (literal RVR1960)", type: text}
-      - {name: cita, label: Cita del versículo, type: string}
+      - name: versiculos
+        label: "Versículos citados en la respuesta: añade uno por cada cita y pega su texto literal de la RVR1960"
+        type: object
+        list: true
+        fields:
+          - {name: cita, label: "Cita (ej. 1 Corintios 10:31)", type: string}
+          - {name: texto, label: Texto del versículo, type: text}
+      - {name: body, label: "¿Por qué? (explicación sencilla, opcional)", type: rich-text}
+      - {name: versiculo, label: "Versículo destacado aparte (opcional, literal RVR1960)", type: text}
+      - {name: cita, label: Cita del versículo destacado, type: string}
       - {name: familia, label: Pregunta para hablar en familia, type: text}
       - {name: pregunta_ninos, label: "C2: pregunta dicha para niños (opcional)", type: string}
       - {name: actividad, label: "C2: actividad (opcional)", type: text}
