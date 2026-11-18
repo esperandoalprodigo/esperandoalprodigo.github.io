@@ -1,6 +1,8 @@
 <div class="estrecho">
   <header class="c-cab"><span class="c-num" aria-hidden="true">{{ include.n }}</span><div><p class="etiqueta">Pregunta {{ include.n }} de 82</p><h1>{{ include.q.pregunta }}</h1></div></header>
   <p class="c-resp">{{ include.q.respuesta | enlazar_citas }}</p>
+  {% assign pasajes = include.q.respuesta | citas_de %}{% capture versos %}{% for p in pasajes %}{% assign t = site.data.versiculos[p] %}{% if t and t != "" %}<blockquote class="versiculo"><p>{{ t | escape }}</p><span class="ref">{{ p }} · RVR1960</span></blockquote>{% endif %}{% endfor %}{% endcapture %}{% assign versos = versos | strip %}
+  {% if versos != "" %}<section class="c-citados">{{ versos }}</section>{% endif %}
   {% include bloques.html %}
   <p class="c-credito">Catecismo de Spurgeon · © Chapel Library</p>
 </div>
