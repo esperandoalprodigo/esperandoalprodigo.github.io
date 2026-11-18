@@ -1,11 +1,6 @@
 <div class="estrecho">
-  {% if page.imagen %}<img class="img-entrada" src="{{ page.imagen | relative_url }}" alt="{{ page.imagen_alt | default: "" | escape }}">{% endif %}
   <header class="c-cab"><span class="c-num" aria-hidden="true">{{ include.n }}</span><div><p class="etiqueta">Pregunta {{ include.n }} de 82</p><h1>{{ include.q.pregunta }}</h1></div></header>
   <p class="c-resp">{{ include.q.respuesta | enlazar_citas }}</p>
-  {% if page.versiculos and page.versiculos.size > 0 %}<section class="c-citados"><h2 class="c-sub">Versículos citados</h2>{% for v in page.versiculos %}{% if v.texto %}<blockquote class="versiculo"><p>{{ v.texto }}</p><span class="ref">{{ v.cita }} · RVR1960</span></blockquote>{% endif %}{% endfor %}</section>{% endif %}
-  {% if content != "" %}<h2 class="c-sub">¿Por qué?</h2><div class="prosa">{% include partes/texto.html %}</div>{% endif %}
-  {% include partes/versiculo.html %}
-  {% if page.familia %}<div class="c-familia"><strong>Para hablar en familia.</strong> {{ page.familia }}</div>{% endif %}
   {% include bloques.html %}
   <p class="c-credito">Catecismo de Spurgeon · © Chapel Library</p>
 </div>
