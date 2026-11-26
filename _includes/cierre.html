@@ -1,0 +1,6 @@
+{% assign aj = site.data.ajustes %}
+<aside class="estrecho cierre" aria-label="Después de leer">
+  {% if aj.invitacion_escribir and aj.invitacion_escribir != "" %}<p class="cierre-t">{{ aj.invitacion_escribir }}</p>
+  <p><a class="boton" href="{{ '/contacto/' | relative_url }}">Escríbeme</a></p>{% endif %}
+  {% if aj.dia_entrada and aj.dia_entrada != "" %}<p class="cierre-dia">Nueva entrada cada {{ aj.dia_entrada }}, aquí y en {% if aj.instagram %}<a href="{{ aj.instagram }}" rel="noopener">Instagram</a>{% else %}Instagram{% endif %}.</p>{% endif %}
+</aside>
