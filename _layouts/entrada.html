@@ -9,4 +9,5 @@ layout: default
 <article class="entrada plantilla-{{ p }}">
 {% include {{ archivo }} %}
 </article>
+{% include cierre.html %}
 <p class="estrecho volver"><a href="{{ tipo.url | default: '/entradas/' | relative_url }}">Ver más {{ tipo.plural | default: 'entradas' | downcase }}</a></p>

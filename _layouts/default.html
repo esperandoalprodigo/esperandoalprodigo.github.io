@@ -14,11 +14,13 @@
 {% feed_meta %}
 </head>
 <body class="tema-{{ site.data.ajustes.contraste | default: 'nitido' }}">
+{% if page.layout == "entrada" or page.layout == "catecismo" %}<div class="progreso" aria-hidden="true"></div>{% endif %}
 <a class="saltar" href="#contenido">Saltar al contenido</a>
 {% include cabecera.html %}
 <main id="contenido">
 {{ content }}
 </main>
 {% include pie.html %}
+<script src="{{ '/assets/movimiento.js' | relative_url }}"></script>
 </body>
 </html>
