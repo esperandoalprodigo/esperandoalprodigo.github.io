@@ -3,38 +3,84 @@ layout: default
 title: Inicio
 ---
 {% assign aj = site.data.ajustes %}
+{% assign d = site.posts | first %}
 <section class="portada">
   <div class="envoltura">
     {% include simbolo.html %}
     <h1>esperando al pródigo</h1>
     <p class="lema">{{ aj.lema }}</p>
     <p class="etiqueta">{{ aj.lema_cita }}</p>
+    {% if aj.bienvenida and aj.bienvenida != "" %}<p class="bienvenida">{{ aj.bienvenida }}</p>{% endif %}
+    <p class="portada-acciones">
+      {% if d %}<a class="boton" href="{{ d.url | relative_url }}">Leer lo último</a>{% endif %}
+      {% if aj.mostrar_sobre_mi %}<a class="boton{% if d %} boton-claro{% endif %}" href="{{ '/sobre-mi/' | relative_url }}">Empieza aquí</a>{% endif %}
+    </p>
   </div>
 </section>
 
-{% if site.posts.size > 0 %}
+{% if d %}
+{% assign dv = d.versiculo %}{% assign dc = d.cita %}
+{% unless dv %}{% assign bv = d.bloques | where: "tipo", "versiculo" | first %}{% if bv %}{% assign dv = bv.texto %}{% assign dc = bv.cita %}{% endif %}{% endunless %}
 <section class="bloque-portada">
   <div class="envoltura">
     <h2>Lo último</h2>
-    <div class="rejilla">
-      {% for e in site.posts limit: aj.entradas_portada %}{% include tarjeta.html e=e %}{% endfor %}
+    {% if aj.dia_entrada and aj.dia_entrada != "" %}<p class="cita-semanal">Nueva entrada cada {{ aj.dia_entrada }}.</p>{% endif %}
+    <a class="destacada" href="{{ d.url | relative_url }}">
+      {% if d.imagen %}<img class="destacada-img" src="{{ d.imagen | relative_url }}" alt="">
+      {% else %}<div class="destacada-lado">
+        {% if d.tipo == "pensamiento" %}<p>{{ d.content | strip_html | truncatewords: 40 }}</p>{% if dc %}<span class="ref">{{ dc }}</span>{% endif %}
+        {% elsif dv %}<p>{{ dv | truncatewords: 45 }}</p>{% if dc %}<span class="ref">{{ dc }} · RVR1960</span>{% endif %}
+        {% else %}{% include simbolo.html %}{% endif %}
+      </div>{% endif %}
+      <div class="destacada-txt">
+        <p class="etiqueta">{{ site.data.tipos[d.tipo].nombre }}</p>
+        <h3>{{ d.title }}</h3>
+        {% if d.resumen %}<p>{{ d.resumen }}</p>{% endif %}
+        <span class="leer">Leer la entrada <span class="flecha" aria-hidden="true">→</span></span>
+      </div>
+    </a>
+    <p style="margin-top:24px"><a href="{{ '/entradas/' | relative_url }}">Ver todas las entradas</a></p>
+  </div>
+</section>
+{% elsif aj.aviso_lanzamiento and aj.aviso_lanzamiento != "" %}
+<section class="bloque-portada">
+  <div class="envoltura caja-rosa" style="text-align:center">
+    <p class="etiqueta">Muy pronto</p>
+    <h2 style="font-size:30px;margin:12px 0 0">{{ aj.aviso_lanzamiento }}</h2>
+  </div>
+</section>
+{% endif %}
+
+{% assign con_entradas = 0 %}
+{% for x in site.data.tipos %}{% assign n = site.posts | where: "tipo", x[0] | size %}{% if n > 0 %}{% assign con_entradas = con_entradas | plus: 1 %}{% endif %}{% endfor %}
+{% if con_entradas > 1 %}
+<section class="bloque-portada">
+  <div class="envoltura">
+    <h2>¿Qué necesitas hoy?</h2>
+    <div class="puertas">
+      {% for x in site.data.tipos %}{% assign n = site.posts | where: "tipo", x[0] | size %}{% if n > 0 %}
+      <a class="puerta" href="{{ x[1].url | relative_url }}">
+        <h3>{{ x[1].plural }}</h3>
+        {% if x[1].descripcion %}<p>{{ x[1].descripcion }}</p>{% endif %}
+        <span class="flecha" aria-hidden="true">→</span>
+      </a>{% endif %}{% endfor %}
     </div>
-    <p style="margin-top:28px"><a class="boton" href="{{ '/entradas/' | relative_url }}">Ver todas las entradas</a></p>
   </div>
 </section>
 {% endif %}
 
 {% assign semanas = site.catecismo | where_exp: "d", "d.date <= site.time" | sort: "numero" %}
-{% if aj.mostrar_catecismo and semanas.size > 0 %}
-{% assign ult = semanas | last %}{% assign q = site.data.spurgeon | where: "numero", ult.numero | first %}
+{% assign hay_cat = false %}{% if aj.mostrar_catecismo and semanas.size > 0 %}{% assign hay_cat = true %}{% endif %}
+{% if hay_cat or aj.mostrar_sobre_mi %}
 <section class="bloque-portada">
-  <div class="envoltura dos">
+  <div class="envoltura{% if hay_cat and aj.mostrar_sobre_mi %} dos{% endif %}">
+    {% if hay_cat %}{% assign ult = semanas | last %}{% assign q = site.data.spurgeon | where: "numero", ult.numero | first %}
     <div class="caja-rosa caja-oscura">
       <p class="etiqueta">Catecismo de la semana · pregunta {{ ult.numero }}</p>
       <h2 style="font-size:30px;margin:12px 0 16px">{{ q.pregunta }}</h2>
       <p>{{ q.respuesta | enlazar_citas }}</p>
       <p style="margin:0"><a href="{{ ult.url | relative_url }}">Ver la pregunta</a></p>
-    </div>
+    </div>{% endif %}
     {% if aj.mostrar_sobre_mi %}{% assign sm = site.pages | where: "url", "/sobre-mi/" | first %}
     <div class="caja-rosa" style="background:var(--tarjeta);border:1px solid var(--borde)">
       <p class="etiqueta">Sobre mí</p>

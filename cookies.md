@@ -2,7 +2,7 @@
 layout: pagina
 title: Política de cookies
 permalink: /cookies/
-actualizado: "[fecha de publicación]"
+actualizado: "15 de diciembre de 2026"
 sitemap: false
 ---
 Esta web no utiliza cookies propias ni de terceros. Las tipografías están alojadas en la propia web, así que tu navegador no se conecta a servicios externos al visitarla.

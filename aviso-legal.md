@@ -2,7 +2,7 @@
 layout: pagina
 title: Aviso legal
 permalink: /aviso-legal/
-actualizado: "[fecha de publicación]"
+actualizado: "15 de diciembre de 2026"
 sitemap: false
 ---
 **Titular de la web:** {{ site.data.ajustes.titular }}
