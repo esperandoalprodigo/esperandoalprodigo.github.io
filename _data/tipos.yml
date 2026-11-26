@@ -1,5 +1,5 @@
-pensamiento: {nombre: Pensamiento, plural: Pensamientos, url: /pensamientos/, defecto: P1}
-reflexion:   {nombre: Reflexión,   plural: Reflexiones,  url: /reflexiones/,  defecto: R1}
-meditacion:  {nombre: Meditación,  plural: Meditaciones, url: /meditaciones/, defecto: M1}
-palabra:     {nombre: Palabra,     plural: Palabra,      url: /palabra/,      defecto: W1}
-testimonio:  {nombre: Testimonio,  plural: Testimonios,  url: /testimonios/,  defecto: T1}
+pensamiento: {nombre: Pensamiento, plural: Pensamientos, url: /pensamientos/, defecto: P1, descripcion: "Una frase para llevar contigo durante el día."}
+reflexion:   {nombre: Reflexión,   plural: Reflexiones,  url: /reflexiones/,  defecto: R1, descripcion: "Lecturas pausadas sobre la espera y el regreso."}
+meditacion:  {nombre: Meditación,  plural: Meditaciones, url: /meditaciones/, defecto: M1, descripcion: "Un versículo, unos pasos y una oración."}
+palabra:     {nombre: Palabra,     plural: Palabra,      url: /palabra/,      defecto: W1, descripcion: "Pasajes de la Biblia explicados paso a paso."}
+testimonio:  {nombre: Testimonio,  plural: Testimonios,  url: /testimonios/,  defecto: T1, descripcion: "Historias de quienes también esperan."}

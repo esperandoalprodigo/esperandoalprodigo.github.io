@@ -2,13 +2,17 @@
 contraste: nitido          # actual | nitido | oscuros
 lema: Un lugar para las madres que esperan el regreso de sus hijos.
 lema_cita: Lucas 15:20
+bienvenida: Aquí no vas a esperar en soledad.
+dia_entrada: lunes
+aviso_lanzamiento: La primera entrada llega el 15 de diciembre.
+invitacion_escribir: "¿Te ha hablado esta lectura? Puedes escribirme."
 entradas_portada: 6
 mostrar_catecismo: true
 mostrar_sobre_mi: true
 mostrar_instagram: true
 instagram: https://www.instagram.com/esperandoalprodigo/
-correo: esperandoalprodigo@gmail.com   # al conectar el dominio: contacto@esperandoalprodigo.es
-titular: "[NOMBRE Y APELLIDOS DE GEOCONDA]"
+correo: esperandoalprodigo@gmail.com
+titular: "Geoconda Tomalá Navarro"
 menu:
   - texto: Inicio
     enlace: /
