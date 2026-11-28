@@ -136,6 +136,7 @@ content:
       - {name: lema, label: Lema de la portada, type: string}
       - {name: lema_cita, label: Cita del lema, type: string}
       - {name: bienvenida, label: "Frase de bienvenida de la portada (vacía = no se muestra)", type: string}
+      - {name: versiculo_portada, label: "Versículo grande de la portada (se ilumina al bajar; vacío = no se muestra)", type: text}
       - {name: dia_entrada, label: "Día de la semana en que sale la entrada nueva (por ejemplo: lunes)", type: string}
       - {name: aviso_lanzamiento, label: "Aviso de la portada mientras no hay ninguna entrada publicada", type: string}
       - {name: invitacion_escribir, label: "Frase al final de cada entrada que invita a escribir", type: string}

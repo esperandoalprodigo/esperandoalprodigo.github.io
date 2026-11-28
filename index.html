@@ -4,19 +4,39 @@ title: Inicio
 ---
 {% assign aj = site.data.ajustes %}
 {% assign d = site.posts | first %}
-<section class="portada">
-  <div class="envoltura">
-    {% include simbolo.html %}
-    <h1>esperando al pródigo</h1>
-    <p class="lema">{{ aj.lema }}</p>
-    <p class="etiqueta">{{ aj.lema_cita }}</p>
-    {% if aj.bienvenida and aj.bienvenida != "" %}<p class="bienvenida">{{ aj.bienvenida }}</p>{% endif %}
-    <p class="portada-acciones">
-      {% if d %}<a class="boton" href="{{ d.url | relative_url }}">Leer lo último</a>{% endif %}
-      {% if aj.mostrar_sobre_mi %}<a class="boton{% if d %} boton-claro{% endif %}" href="{{ '/sobre-mi/' | relative_url }}">Empieza aquí</a>{% endif %}
-    </p>
+<section class="heroe">
+  <div class="envoltura heroe-rejilla">
+    <div class="heroe-txt">
+      <p class="heroe-esquina"><span>{{ aj.lema_cita }}</span>{% if aj.dia_entrada and aj.dia_entrada != "" %}<span>Nueva entrada cada {{ aj.dia_entrada }}</span>{% endif %}</p>
+      <div class="heroe-pie">
+        <h1 aria-label="esperando al pródigo"><span class="linea" aria-hidden="true"><span>esperando</span></span><span class="linea" aria-hidden="true"><span>al pródigo</span></span></h1>
+        <p class="lema">{{ aj.lema }}</p>
+        <p class="portada-acciones">
+          {% if d %}<a class="boton" href="{{ d.url | relative_url }}">Leer lo último</a>{% endif %}
+          {% if aj.mostrar_sobre_mi %}<a class="boton{% if d %} boton-claro{% endif %}" href="{{ '/sobre-mi/' | relative_url }}">Empieza aquí</a>{% endif %}
+        </p>
+      </div>
+    </div>
+    <div class="heroe-arco" aria-hidden="true">
+      <svg viewBox="0 0 300 400" focusable="false">
+        <path class="arco-fondo" d="M40 380 V150 A110 110 0 0 1 260 150 V380 Z"/>
+        <path class="arco-trazo" pathLength="1" d="M40 380 V150 A110 110 0 0 1 260 150 V380"/>
+        <path class="arco-suelo" pathLength="1" d="M8 380 H292"/>
+        <path class="arco-llama" d="M150 236 C176 274 181 304 150 336 C119 304 124 274 150 236 Z"/>
+      </svg>
+    </div>
   </div>
 </section>
+
+{% if aj.versiculo_portada and aj.versiculo_portada != "" %}
+<section class="manifiesto">
+  <div class="estrecho-ancho">
+    <p class="manifiesto-t">{% assign palabras = aj.versiculo_portada | split: " " %}{% for w in palabras %}<span class="pal">{{ w }}</span> {% endfor %}</p>
+    <p class="ref">{{ aj.lema_cita }} · RVR1960</p>
+    {% if aj.bienvenida and aj.bienvenida != "" %}<p class="manifiesto-sub">{{ aj.bienvenida }}</p>{% endif %}
+  </div>
+</section>
+{% endif %}
 
 {% if d %}
 {% assign dv = d.versiculo %}{% assign dc = d.cita %}
@@ -97,7 +117,7 @@ title: Inicio
   <div class="envoltura caja-rosa" style="text-align:center">
     <p class="etiqueta">Instagram</p>
     <h2 style="font-size:30px;margin:12px 0 20px">Cada semana, también en Instagram</h2>
-    <a class="boton" href="{{ aj.instagram }}" rel="noopener">Seguir a @esperandoalprodigo</a>
+    <a class="boton boton-ig" href="{{ aj.instagram }}" rel="noopener">{% include instagram-glifo.html %}<span><span class="ig-seguir">Seguir a </span>@esperandoalprodigo</span></a>
   </div>
 </section>
 {% endif %}
