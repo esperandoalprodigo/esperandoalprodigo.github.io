@@ -83,3 +83,33 @@ function copiarEnlace(boton) {
     observador.observe(elementos[i]);
   }
 })();
+
+/* Portada: el versículo se ilumina palabra a palabra al desplazarse y el arco deriva despacio. */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var seccion = document.querySelector('.manifiesto');
+  var arco = document.querySelector('.heroe-arco svg');
+  var palabras = seccion ? seccion.querySelectorAll('.pal') : [];
+  if (!palabras.length && !arco) return;
+  if (palabras.length) seccion.classList.add('con-relleno');
+  var pendiente = false;
+  function pintar() {
+    pendiente = false;
+    var alto = window.innerHeight;
+    if (arco) arco.style.transform = 'translateY(' + Math.min(window.scrollY * 0.12, 40).toFixed(1) + 'px)';
+    if (!palabras.length) return;
+    var caja = seccion.getBoundingClientRect();
+    var inicio = alto * 0.82, fin = alto * 0.42;
+    var p = (inicio - caja.top) / (inicio - fin + caja.height * 0.55);
+    p = Math.max(0, Math.min(1, p));
+    var frente = p * (palabras.length + 3);
+    for (var i = 0; i < palabras.length; i++) {
+      var lleno = Math.max(0, Math.min(1, (frente - i) / 3));
+      palabras[i].style.opacity = (0.26 + 0.74 * lleno).toFixed(2);
+    }
+  }
+  function pedir() { if (!pendiente) { pendiente = true; window.requestAnimationFrame(pintar); } }
+  window.addEventListener('scroll', pedir, { passive: true });
+  window.addEventListener('resize', pedir);
+  pintar();
+})();
