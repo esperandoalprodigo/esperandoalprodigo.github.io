@@ -6,6 +6,8 @@
     <div class="despues"><p class="etiqueta">Lo que Dios hizo</p><p>{{ page.despues }}</p></div>
   </div>{% endif %}
   {% include partes/versiculo.html %}
-  {% include partes/cuerpo.html %}
+  {% include partes/indice.html %}
+  <div class="prosa">{% include partes/texto.html %}</div>
   {% if page.firma %}<p class="t-firma">{{ page.firma }}</p>{% endif %}
+  {% include bloques.html %}
 </div>
